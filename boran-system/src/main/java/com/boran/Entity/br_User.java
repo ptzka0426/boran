@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -26,6 +23,7 @@ public class br_User implements Serializable {
     //持久化参数
     private static final long serialVersionUID = -8447170587360305408L;
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer uid;//用户id
     private String uuser;//用户名
     private String upassword;//用户名密码
