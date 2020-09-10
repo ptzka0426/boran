@@ -118,7 +118,6 @@
       <change afterPath="$PROJECT_DIR$/boran-system/src/main/java/com/boran/Server/impl/Br_UserServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/application.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/boran-system/src/test/java/com/boran/BoranSystemApplicationTests.java" afterDir="false" />
-    <list default="true" id="f58a31a7-dd41-4ae9-ae56-c7ab80e63385" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,13 +201,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
