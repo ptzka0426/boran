@@ -4,11 +4,26 @@
     <meta charset="UTF-8">
     <title>博冉后台管理页面</title>
     <!-- 引入样式 -->
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="element-ui/index.css">
+    <script src="Vue/vue.js"></script>
     <!-- 引入组件库 -->
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="element-ui/index.js"></script>
 </head>
 <body>
+<div id="app">
+    <el-button @click="visible = true">Button</el-button>
+    <el-dialog :visible.sync="visible" title="Hello world">
+        <p>你好</p>
+    </el-dialog>
+</div>
 
 </body>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {visible: false}
+        }
+    })
+</script>
 </html>

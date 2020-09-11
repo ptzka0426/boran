@@ -17,5 +17,4 @@ public class BoranSystemApplication {
     public static void main(String[] args) {
         SpringApplication.run(BoranSystemApplication.class, args);
     }
-
 }
