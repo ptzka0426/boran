@@ -19,7 +19,7 @@ public class Br_UserServiceImpl implements br_UserService {
     private br_User_Dao br_user_dao;
     @Override
     public List<br_User> getUser(String name) {
-        List<br_User> list = br_user_dao.findAll();//.getbr_user(name);/*getbr_user(name);*/
+        List<br_User> list = br_user_dao.getbr_user(name);/*.findAll();*//*getbr_user(name);*/
         return list;
     }
 }
