@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+div {
+    position: absolute;
+    overflow:hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    background: #606266;
+}
+
+
+
+/*下面是元素id*/
+.el-header, .el-footer {
+    background-color: #B3C0D1;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+}
+
+.el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+}
+
+.el-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+    line-height: 160px;
+}
+
+body > .el-container {
+    margin-bottom: 40px;
+}
+
+/*!*屏幕宽bai度小于640px时显du示红色字体*!
+@media screen and (max-width: 640px) {
+    !*匹配类*!
+    .element {
+        color: #ff0000;
+        font-size: 32px;
+    }
+
+
+}
+
+!*屏幕宽度小于480px时显示蓝色字体*!
+@media screen and (max-width: 480px) {
+    .element {
+        color: #0000ff;
+        font-size: 16px;
+    }
+}*/
