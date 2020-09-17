@@ -2,6 +2,7 @@ package com.boran.Dao;
 
 
 import com.boran.Entity.br_User;
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
@@ -17,9 +18,11 @@ import java.util.List;
  * @date:2020/9/9
  */
 @Repository
-public interface br_User_Dao extends JpaRepository<br_User,Integer>/*, JpaSpecificationExecutor<br_User> */{
+public interface br_User_Dao extends JpaRepository<br_User, Integer>/*, JpaSpecificationExecutor<br_User> */ {
 
     @Query(value = "select a from br_User a where a.uname =?1")
     List<br_User> getbr_user(String name);
 
+    @Query(value = "select count(1) from br_User a where a.uuser=?1 and a.upassword=?1")
+    int log(br_User user);
 }

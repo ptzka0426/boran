@@ -33,7 +33,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.49</version>
         </dependency>
         <!--Hibernate依赖jpa-->
         <dependency>
@@ -60,12 +59,21 @@
         </dependency>
     </dependencies>
 
+
     <build>
         <plugins>
+            <!--打包(jar包)-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <!--打包(war包)-->
+            <!--<plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>-->
         </plugins>
     </build>
 

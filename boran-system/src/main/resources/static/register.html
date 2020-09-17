@@ -6,27 +6,50 @@
     <!-- 引入样式 -->
     <link rel="stylesheet" href="element-ui/index.css">
     <link rel="stylesheet" href="element-ui/css/register.css">
+    <script src="element-ui/jQuery-v3.5.1.js"></script>
     <script src="Vue/vue.js"></script>
     <!-- 引入组件库 -->
     <script src="element-ui/index.js"></script>
 </head>
 <body>
-<div id="app">
-    <el-container>
-        <el-header>Header</el-header>
-        <el-main>Main</el-main>
-        <el-footer>Footer</el-footer>
-    </el-container>
-</div>
+<div id="body">
+    <div id="Header">
 
+    </div>
+    <div id="main">
+        <div id="main-element">
+            <div id="main-element-img">
+                <img src="element-ui/images/index/img-01.png">
+            </div>
+            <div id="app">
+                <el-form ref="form" :model="form" label-width="80px">
+                    <div id="app-text">
+                        <span>博冉科技后台管理系统</span>
+                    </div>
+                    <div id="form-type">
+                        <el-input
+                                placeholder="用户名"
+                                v-model="form.uuser"
+                                clearable>
+                        </el-input>
+                        <el-input
+                                placeholder="密码"
+                                v-model="form.upassword"
+                                clearable>
+                        </el-input>
+                        <div id="form-button">
+                            <el-button type="success" @click="onsubmit" round>登陆</el-button>
+                        </div>
+                    </div>
+                </el-form>
+            </div>
+        </div>
+    </div>
+    <div id="Footer">
+
+    </div>
+</div>
 </body>
-<script>
-    /* new Vue({
-         el: '#app',
-         data: function () {
-             return {visible: false}
-         }
-     })*/
-    new Vue().$mount('#app')
+<script src="Vue/register/v-js.js">
 </script>
 </html>
