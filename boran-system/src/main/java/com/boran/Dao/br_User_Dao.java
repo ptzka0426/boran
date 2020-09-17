@@ -2,13 +2,16 @@ package com.boran.Dao;
 
 
 import com.boran.Entity.br_User;
-import jdk.internal.org.objectweb.asm.tree.analysis.Value;
+
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Component;
+
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 
@@ -23,6 +26,7 @@ public interface br_User_Dao extends JpaRepository<br_User, Integer>/*, JpaSpeci
     @Query(value = "select a from br_User a where a.uname =?1")
     List<br_User> getbr_user(String name);
 
-    @Query(value = "select count(1) from br_User a where a.uuser=?1 and a.upassword=?1")
+    //@Modifying
+    @Query(value = "select count(a.coid) from br_User a where a.uuser= :#{#user.uuser} and a.upassword= :#{#user.upassword}")
     int log(br_User user);
 }

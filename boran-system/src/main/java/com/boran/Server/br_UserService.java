@@ -11,4 +11,6 @@ import java.util.List;
  */
 public interface br_UserService {
     List<br_User> getUser(String name);
+
+    int log(br_User user);
 }

@@ -22,4 +22,10 @@ public class Br_UserServiceImpl implements br_UserService {
         List<br_User> list = br_user_dao.getbr_user(name);/*.findAll();*//*getbr_user(name);*/
         return list;
     }
+
+    /*登录*/
+    @Override
+    public int log(br_User user) {
+        return br_user_dao.log(user);
+    }
 }
