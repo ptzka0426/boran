@@ -18,6 +18,7 @@ import java.util.List;
  */
 @RestController
 public class Br_UserController {
+
     @Autowired
     private br_UserService br_userService;
 
@@ -34,3 +35,4 @@ public class Br_UserController {
         return br_userService.log(user);
     }
 }
+
