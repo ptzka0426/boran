@@ -27,13 +27,37 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f58a31a7-dd41-4ae9-ae56-c7ab80e63385" name="Default Changelist" comment="登录交互-0.1.3">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/element-ui/images/register/img-01.png" afterDir="false" />
+    <list default="true" id="f58a31a7-dd41-4ae9-ae56-c7ab80e63385" name="Default Changelist" comment="登录交互-1.0">
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/Vue/login/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/css/login/font/adminthemes-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/css/login/font/adminthemes-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/css/login/font/adminthemes-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/css/login/font/adminthemes-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/css/login/font/adminthemes-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/css/login/jquery.mCustomScrollbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/css/login/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/images/login/admin_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/images/login/icon/DefaultAvatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/images/login/icon/apple-touch-icon-120x120-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/images/login/icon/apple-touch-icon-196x196-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/images/login/icon/apple-touch-icon-57x57-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/images/login/icon/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/js/login/Particleground.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/js/login/html5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/js/login/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/js/login/jquery.mCustomScrollbar.concat.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/js/login/verificationNumbers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boran-system/src/main/java/com/boran/Controller/Br_UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/boran-system/src/main/java/com/boran/Controller/Br_UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boran-system/src/main/resources/static/Vue/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/Vue/vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boran-system/src/main/resources/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boran-system/src/main/resources/static/Vue/register/v-js.js" beforeDir="false" afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/Vue/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boran-system/src/main/resources/static/element-ui/css/register/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/css/register/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boran-system/src/main/resources/static/element-ui/images/register/img-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boran-system/src/main/resources/static/element-ui/jQuery-v3.5.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/boran-system/src/main/resources/static/js/jQuery-v3.5.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boran-system/src/main/resources/static/register.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +91,8 @@
         <option value="hibernate-main-5.2" />
         <option value="FxmlFile" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Vue" />
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -108,7 +132,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/boran-vue" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/boran-system/src/main/resources/static" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -127,34 +151,26 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\boran\boran-vue" />
-      <recent name="D:\boran\boran-vue\src" />
-      <recent name="D:\boran\boran-vue\src\views" />
       <recent name="D:\boran\boran-system\src\main\resources\static" />
-      <recent name="D:\boran\boran-system\src\main\resources\static\element-ui\fonts\index" />
+      <recent name="D:\boran\boran-system\src\main\resources\static\css\login\font" />
+      <recent name="D:\boran\boran-system\src\main\resources\static\images\login" />
+      <recent name="D:\boran\boran-system\src\main\resources\static\css\login" />
+      <recent name="D:\boran\boran-system\src\main\resources\static\js\login" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\boran\boran-vue\public" />
-      <recent name="D:\boran\boran-vue\src" />
-      <recent name="D:\boran" />
-      <recent name="D:\boran\boran-system\src\main\resources\static\Vue\src\components" />
-      <recent name="D:\boran\boran-system\src\main\resources\static\Vue\src" />
+      <recent name="D:\boran\boran-system\src\main\resources\static\css\login\font" />
+      <recent name="D:\boran\boran-system\src\main\resources\static\js\login" />
+      <recent name="D:\boran\boran-system\src\main\resources\static\js" />
+      <recent name="D:\boran\boran-system\src\main\resources\static" />
+      <recent name="D:\boran\boran-system\src\main\resources\static\element-ui\js\index" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Spring Boot.BoranSystemApplication">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:8080">
+      <method v="2" />
     </configuration>
     <configuration name="BoranSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="boran-system" />
@@ -169,6 +185,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="Spring Boot.BoranSystemApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.BoranSystemApplication" />
@@ -200,6 +220,8 @@
       <workItem from="1600757184415" duration="7025000" />
       <workItem from="1600850126075" duration="1145000" />
       <workItem from="1600851876732" duration="7718000" />
+      <workItem from="1600914434291" duration="8882000" />
+      <workItem from="1600928495076" duration="18644000" />
     </task>
     <task id="LOCAL-00001" summary="第二次操作">
       <created>1599611628495</created>
@@ -271,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600327370906</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="登录交互-0.1.4">
+      <created>1600914758346</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1600914758346</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +316,9 @@
     <MESSAGE value="登录-0.1" />
     <MESSAGE value="登录交互-0.1.2" />
     <MESSAGE value="登录交互-0.1.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="登录交互-0.1.3" />
+    <MESSAGE value="登录交互-0.1.4" />
+    <MESSAGE value="登录交互-1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录交互-1.0" />
   </component>
   <component name="WindowStateProjectService">
     <state x="618" y="254" key="#Custom_Plugin_Repositories" timestamp="1600736080889">
@@ -298,14 +329,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="502" y="235" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1600737021382" />
-    <state x="381" y="0" width="1153" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600913792180">
+    <state x="498" y="0" key="#Project_Structure" timestamp="1600929222990">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="381" y="0" width="1153" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1600913792180" />
-    <state x="478" y="212" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600221975103">
+    <state x="498" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1600929222990" />
+    <state x="557" y="198" key="#Web_Browsers" timestamp="1600934109981">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="212" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1600221975103" />
+    <state x="557" y="198" key="#Web_Browsers/0.0.1536.824@0.0.1536.824" timestamp="1600934109981" />
+    <state x="374" y="0" width="1162" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601000842851">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="374" y="0" width="1162" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1601000842851" />
+    <state x="478" y="212" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600938273480">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="212" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1600938273480" />
     <state x="397" y="92" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1600736871032">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -330,58 +369,62 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="380" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1599640216916" />
-    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1600327885967">
+    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600935937031">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1600327885967" />
-    <state x="841" y="134" key="FileChooserDialogImpl" timestamp="1600913255279">
+    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1600935937031" />
+    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1601000730015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="841" y="134" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600913255279" />
+    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601000730015" />
+    <state x="841" y="134" key="FileChooserDialogImpl" timestamp="1600936285652">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="841" y="134" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600936285652" />
     <state x="643" y="308" width="273" height="280" key="Github.ShareDialog" timestamp="1599559583083">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="643" y="308" width="273" height="280" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1599559583083" />
-    <state width="1492" height="208" key="GridCell.Tab.0.bottom" timestamp="1600913820990">
+    <state width="1492" height="205" key="GridCell.Tab.0.bottom" timestamp="1601000872857">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600913820990" />
-    <state width="1492" height="208" key="GridCell.Tab.0.center" timestamp="1600913820990">
+    <state width="1492" height="205" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601000872857" />
+    <state width="1492" height="205" key="GridCell.Tab.0.center" timestamp="1601000872857">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600913820990" />
-    <state width="1492" height="208" key="GridCell.Tab.0.left" timestamp="1600913820990">
+    <state width="1492" height="205" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601000872857" />
+    <state width="1492" height="205" key="GridCell.Tab.0.left" timestamp="1601000872857">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600913820990" />
-    <state width="1492" height="208" key="GridCell.Tab.0.right" timestamp="1600913820990">
+    <state width="1492" height="205" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601000872857" />
+    <state width="1492" height="205" key="GridCell.Tab.0.right" timestamp="1601000872857">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600913820990" />
-    <state width="1492" height="212" key="GridCell.Tab.1.bottom" timestamp="1600399341061">
+    <state width="1492" height="205" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601000872857" />
+    <state width="1492" height="205" key="GridCell.Tab.1.bottom" timestamp="1601000872857">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="212" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600399341061" />
-    <state width="1492" height="212" key="GridCell.Tab.1.center" timestamp="1600399341061">
+    <state width="1492" height="205" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601000872857" />
+    <state width="1492" height="205" key="GridCell.Tab.1.center" timestamp="1601000872857">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="212" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1600399341061" />
-    <state width="1492" height="212" key="GridCell.Tab.1.left" timestamp="1600399341061">
+    <state width="1492" height="205" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601000872857" />
+    <state width="1492" height="205" key="GridCell.Tab.1.left" timestamp="1601000872857">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="212" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1600399341061" />
-    <state width="1492" height="212" key="GridCell.Tab.1.right" timestamp="1600399341061">
+    <state width="1492" height="205" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601000872857" />
+    <state width="1492" height="205" key="GridCell.Tab.1.right" timestamp="1601000872857">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="212" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1600399341061" />
+    <state width="1492" height="205" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601000872857" />
     <state x="244" y="134" key="Maven.ArtifactSearchDialog" timestamp="1600326784432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="244" y="134" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1600326784432" />
-    <state x="248" y="0" key="SettingsEditor" timestamp="1600851265973">
+    <state x="248" y="0" key="SettingsEditor" timestamp="1600915816082">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="248" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1600851265973" />
+    <state x="248" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1600915816082" />
     <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1600327379160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -394,18 +437,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="676" y="220" key="jetbrains.nodejs.interpreters-dialog/0.0.1536.824@0.0.1536.824" timestamp="1600745803034" />
-    <state x="194" y="121" key="new project wizard" timestamp="1600851263138">
+    <state x="293" y="27" key="new project wizard" timestamp="1600929215914">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="194" y="121" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1600851263138" />
+    <state x="293" y="27" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1600929215914" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1600241962742">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1600241962742" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1600326032974">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1600997811712">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600326032974" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600997811712" />
     <state x="568" y="319" key="svn.passwordDialog" timestamp="1599556658633">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

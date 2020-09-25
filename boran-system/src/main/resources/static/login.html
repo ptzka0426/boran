@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>博冉创新科技</title>
+    <meta name="author" content="DeathGhost"/>
+    <!-- 引入样式elment -->
+    <link rel="stylesheet" href="element-ui/index.css">
+    <!--动画的css-->
+    <link rel="stylesheet" type="text/css" href="css/login/style.css"/>
+    <style>
+        body {
+            height: 100%;
+            background: #303133;
+            overflow: hidden;
+        }
+
+        canvas {
+            z-index: -1;
+            position: absolute;
+        }
+    </style>
+    <script src="js/jQuery-v3.5.1.js"></script>
+    <!--js的html-->
+    <script src="js/login/verificationNumbers.js"></script>
+    <script src="js/login/Particleground.js"></script>
+
+    <script src="Vue/vue.js"></script>
+    <!-- 引入组件库elment -->
+    <script src="element-ui/index.js"></script>
+</head>
+<body>
+<div id="app">
+    <el-form ref="form" :model="form">
+        <dl class="admin_login">
+            <dt>
+                <strong>博冉后台管理系统</strong>
+                <em>BoRan</em>
+            </dt>
+            <dd class="user_icon">
+                <el-input class="login_txtbx"
+                          placeholder="账号"
+                          v-model="form.uuser"
+                          clearable
+                          autosize
+                >
+                </el-input>
+
+                <!--<input type="text" placeholder="账号" name="yhm" class="login_txtbx"/>-->
+            </dd>
+            <dd class="pwd_icon">
+                <el-input class="login_txtbx" placeholder="密码" v-model="form.upassword" show-password></el-input>
+                <!--  <input type="password" placeholder="密码" name="password" class="login_txtbx"/>-->
+            </dd>
+            <dd class="val_icon">
+                <div class="checkcode">
+                    <input type="text" id="J_codetext" placeholder="验证码" maxlength="4" class="login_txtbx">
+                    <canvas class="J_codeimg" id="myCanvas" onclick="createCode()">对不起，您的浏览器不支持canvas，请下载最新版浏览器!
+                    </canvas>
+                </div>
+                <input type="button" value="验证码核验" class="ver_btn" onClick="validate();">
+            </dd>
+            <dd>
+                <el-button type="success" @click="onsubmit" round>登陆</el-button>
+                <!-- <input type="button" value="立即登陆" class="submit_btn"/>-->
+            </dd>
+            <dd>
+                <p>© 2020-2020 boran 版权所有</p>
+                <p>博冉创新科技有限公司</p>
+            </dd>
+        </dl>
+    </el-form>
+</div>
+</body>
+<script src="Vue/login/login.js">
+</script>
+<script>
+    $(document).ready(function () {
+        //粒子背景特效
+        $('body').particleground({
+            dotColor: '#5cbdaa',
+            lineColor: '#5cbdaa'
+        });
+        //验证码
+        createCode();
+        //测试提交，对接程序删除即可
+
+    });
+</script>
+</html>

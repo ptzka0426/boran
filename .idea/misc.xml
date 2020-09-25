@@ -7,6 +7,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/boran-system/pom.xml" />
+        <option value="$PROJECT_DIR$/boran-vue/pom.xml" />
       </list>
     </option>
   </component>
