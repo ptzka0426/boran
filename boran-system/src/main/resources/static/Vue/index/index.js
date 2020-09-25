@@ -1,19 +1,11 @@
-/* new Vue({
-     el: '#app',
-     data: function () {
-         return {visible: false}
-     }
- })*/
-/*new Vue().$mount('#app')*/
+
 var Main = {
     data() {
         return {
-            form: {
-                uuser: '',
-                upassword: ''
-            }
-        }
-    }, methods: {
+            isCollapse: true
+        };
+    },
+    methods: {
         handleOpen(key, keyPath) {
             console.log(key, keyPath);
         },
