@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>博冉创新科技</title>
+    <title>博冉科技创新</title>
     <meta name="author" content="DeathGhost"/>
     <!-- 引入样式elment -->
     <link rel="stylesheet" href="element-ui/index.css">
@@ -61,6 +61,7 @@
                 <input type="button" value="验证码核验" class="ver_btn" onClick="validate();">
             </dd>
             <dd>
+                <!--@click=vue的onsubmit()-->
                 <el-button type="success" @click="onsubmit" round>登陆</el-button>
                 <!-- <input type="button" value="立即登陆" class="submit_btn"/>-->
             </dd>
@@ -84,7 +85,6 @@
         //验证码
         createCode();
         //测试提交，对接程序删除即可
-
     });
 </script>
 </html>

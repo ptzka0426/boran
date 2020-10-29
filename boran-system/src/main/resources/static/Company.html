@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博冉科技创新</title>
+    <!-- 引入样式elment -->
+    <link rel="stylesheet" href="element-ui/index.css">
+    <script src="js/jQuery-v3.5.1.js"></script>
+    <script src="Vue/vue.js"></script>
+    <!-- 引入组件库elment -->
+    <script src="element-ui/index.js"></script>
+</head>
+<body>
+<div id="app">
+    <el-table
+            :data="tableData"
+            border
+            style="width: 80%">
+        <el-table-column
+                fixed
+                prop="date"
+                label="成立日期"
+                width="150">
+        </el-table-column>
+        <el-table-column
+                prop="name"
+                label="公司名称"
+                width="120">
+        </el-table-column>
+        <el-table-column
+                prop="province"
+                label="公司地址"
+                width="120">
+        </el-table-column>
+        <el-table-column
+                label="操作"
+                width="100">
+            <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+            <el-button type="text" size="small">编辑</el-button>
+        </el-table-column>
+    </el-table>
+</div>
+</body>
+<script src="Vue/Company/Companys.js">
+</script>
+</html>

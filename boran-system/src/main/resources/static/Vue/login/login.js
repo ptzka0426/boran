@@ -7,6 +7,7 @@ var Main = {
             }
         }
     }, methods: {
+        //点击button提交
         onsubmit() {
             var $this = this;
             if (this.form.uuser.trim() == 0 || this.form.upassword.trim() == 0) {
@@ -21,7 +22,6 @@ var Main = {
                         } else {
                             $this.$alert('登陆失败', '提示');
                         }
-
                         /*jquery中的$().each和$.each的区别，前者只能遍历数组，后者可以遍历数组和对象 */
                         /*$.each(data, function (key, values) {
                             $.each(values, function (s) {

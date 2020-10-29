@@ -2,16 +2,11 @@ package com.boran.Dao;
 
 
 import com.boran.Entity.br_User;
-
+import org.hibernate.annotations.SQLInsert;
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 
@@ -29,4 +24,7 @@ public interface br_User_Dao extends JpaRepository<br_User, Integer>/*, JpaSpeci
     //@Modifying
     @Query(value = "select count(a.coid) from br_User a where a.uuser= :#{#user.uuser} and a.upassword= :#{#user.upassword}")
     int log(br_User user);
+
+   /* @SQLInsert(sql = "into `jcb_lottery_data`(type,number,`data`,time) VALUES(?1,?2,?3,?4)")
+    int insert(int type,String number,String data,String time);*/
 }

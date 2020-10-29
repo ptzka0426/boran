@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博冉科技创新</title>
+    <!-- 引入样式elment -->
+    <link rel="stylesheet" href="element-ui/index.css">
+    <script src="js/jQuery-v3.5.1.js"></script>
+    <script src="Vue/vue.js"></script>
+    <!-- 引入组件库elment -->
+    <script src="element-ui/index.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="main_left" style="height:100%">
+        <ul>
+            <li data-src="AddCompany.html">朝阳</li>
+            <li data-src="Company.html">海淀</li>
+            <li data-src="userVip.action"><a href="javascript:void(0);" onclick="loadXMLDoc('index.html')">丰台</a></li>
+        </ul>
+    </div>
+    <div class="main_right">
+        <iframe frameborder="0" scrolling="yes" src="login.html" id="aa"></iframe>
+    </div>
+    <video width="320" height="240" controls>
+        <source src="白小白 - 我爱你不问归期.mkv" type="video/mp4">
+    </video>
+</div>
+
+</body>
+<style>
+    .main_left {
+        width: 150px;
+        height: 100%;
+        float: left;
+        background: #c0c0c0;
+        cursor: pointer;
+    }
+
+    .main_right {
+        width: 80%;
+        height: 500px;
+    }
+    .main_right>iframe{
+        width: 80%;
+        height: 100%;
+    }
+</style>
+<script src="Vue/test/test.js"></script>
+</html>

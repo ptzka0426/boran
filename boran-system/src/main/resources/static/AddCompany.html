@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博冉科技创新</title>
+    <!-- 引入样式elment -->
+    <link rel="stylesheet" href="element-ui/index.css">
+    <script src="js/jQuery-v3.5.1.js"></script>
+    <script src="Vue/vue.js"></script>
+    <!-- 引入组件库elment -->
+    <script src="element-ui/index.js"></script>
+</head>
+<body>
+<div id="app">
+
+    <el-form :model="form" status-icon :rules="rules" ref="form" label-width="100px" class="demo-form">
+        <el-form-item label="公司名称" prop="name" :required="true">
+            <el-input v-model="form.name" placeholder="请输入公司名称" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="电话" prop="phone" :required="true">
+            <el-input v-model.number="form.phone" placeholder="请输入电话号码"
+                      onkeyup="this.value=this.value.replace(/[^\d.]/g,'');" maxlength="11"
+                      autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="邮箱" prop="emali" :required="true">
+            <el-input v-model="form.emali" placeholder="请输入邮箱地址" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="营业执照" :required="true">
+            <el-upload
+                    class="avatar-uploader"
+                    action="https://jsonplaceholder.typicode.com/posts/"
+                    :show-file-list="false"
+                    :on-success="handleAvatarSuccess"
+                    :before-upload="beforeAvatarUpload">
+                <img v-if="form.imageUrl" :src="form.imageUrl" class="avatar">
+                <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+            </el-upload>
+        </el-form-item>
+        <el-form-item label="公司地址" prop="address" :required="true">
+            <el-input v-model="form.address" placeholder="请输入公司地址" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="上级公司" prop="scompany" :required="true">
+            <el-radio-group v-model="form.scompany">
+                <el-radio-button label="是"></el-radio-button>
+                <el-radio-button label="否"></el-radio-button>
+            </el-radio-group>
+        </el-form-item>
+        <el-form-item label="上级公司名称" prop="sscompany" :required="true" :hidden="true">
+            <el-select v-model="form.sscompany" placeholder="请选择">
+                <el-option
+                        v-for="item in form.items"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                </el-option>
+            </el-select>
+        </el-form-item>
+        <div>
+            <el-button type="success" @click="submitForm(form)" >提交</el-button>
+        </div>
+    </el-form>
+</div>
+</body>
+<style>
+    #app{
+        text-align: -webkit-center;
+    }
+    .el-form-item{
+        width: 30%;
+    }
+    /*文件上传的css*/
+    .avatar-uploader .el-upload {
+        border: 1px dashed #d9d9d9;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .avatar-uploader .el-upload:hover {
+        border-color: #409EFF;
+    }
+
+    .avatar-uploader-icon {
+        font-size: 28px;
+        color: #8c939d;
+        width: 178px;
+        height: 178px;
+        line-height: 178px;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 178px;
+        height: 178px;
+        display: block;
+    }
+</style>
+<script src="Vue/Company/Company.js">
+</script>
+</html>
