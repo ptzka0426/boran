@@ -4,13 +4,13 @@ server:
   # mysql
 spring:
   datasource:
-#    url: jdbc:mysql://59.110.240.29:3306/k?useunicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true
-#    username: k
-#    password: xggd1314
-    url: jdbc:mysql://192.168.2.6:3306/boran?useunicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true
-    username: root
-    password: boran123
-    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://59.110.240.29:3306/k?useunicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true
+    username: k
+    password: xggd1314
+#    url: jdbc:mysql://192.168.2.6:3306/boran?useunicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true
+#    username: root
+#    password: boran123
+    driver-class-name: com.mysql.cj.jdbc.Driver   #com.mysql.jdbc.Driver
 
   jpa:
     properties:

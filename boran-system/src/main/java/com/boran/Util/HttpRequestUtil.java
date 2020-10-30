@@ -29,9 +29,11 @@ public class HttpRequestUtil {
             URL url = new URL(requestUrl);
             HttpURLConnection httpUrlConn = (HttpURLConnection) url.openConnection();
             httpUrlConn.addRequestProperty("User-Agent","Mozilla / 4.76");
-            httpUrlConn.setDoOutput(true);
-            httpUrlConn.setDoInput(true);
-            httpUrlConn.setUseCaches(false);
+            /*httpUrlConn.setConnectTimeout(10000);
+            httpUrlConn.setReadTimeout(10000);*/
+            httpUrlConn.setDoOutput(true);//允许输入流，即允许下载
+            httpUrlConn.setDoInput(true);//允许输出流，即允许上传
+            httpUrlConn.setUseCaches(false);//不使用缓冲
             // 设置请求方式（GET/POST）
             httpUrlConn.setRequestMethod(requestMethod);
             if ("GET".equalsIgnoreCase(requestMethod)) {
