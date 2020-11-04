@@ -46,21 +46,42 @@ public class Br_UserController {
 
     @GetMapping(value = "/txffc")
     public String txffc() throws Exception {
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         Calendar calendar = Calendar.getInstance();
         String yyyy = new SimpleDateFormat("yyyy").format(calendar.getTime());
         String MM = new SimpleDateFormat("MM").format(calendar.getTime());
         String dd = new SimpleDateFormat("dd").format(calendar.getTime());
         String shi = new SimpleDateFormat("HH").format(calendar.getTime());
         String fen = new SimpleDateFormat("mm").format(calendar.getTime());
-        System.out.println(yyyy + MM + dd + "-" + shi + ":" + fen + ":00");
-        int sum = (Integer.parseInt(shi) * 60) + Integer.parseInt(fen);//当前期数
-        String qihao;
-        if ((sum + "").length() == 4) {
-            qihao = yyyy + MM + dd + "-" + sum;
+        int sum;
+        if (shi.equals("0") && fen.equals("0")) {
+            sum = 1440;//当前期数
         } else {
-            qihao = yyyy + MM + dd + "-0" + sum;
+            sum = (Integer.parseInt(shi) * 60) + Integer.parseInt(fen);//当前期数
         }
+        String qihao;
+        if ((sum + "").length() == 1) {
+            qihao = yyyy + MM + dd + "-000" + sum;
+        } else if ((sum + "").length() == 2) {
+            qihao = yyyy + MM + dd + "-00" + sum;
+        } else if ((sum + "").length() == 3) {
+            qihao = yyyy + MM + dd + "-0" + sum;
+        } else {
+            if (sum == 1440) {
+                /*日期最后一月1440可能出错*/
+                String tian = (calendar.get(Calendar.DATE) - 1) + "";
+                if (tian.length() == 1) {
+                    qihao = yyyy + MM + "0" + tian + "-" + sum;
+                } else {
+                    qihao = yyyy + MM + tian + "-" + sum;
+                }
+
+            } else {
+                qihao = yyyy + MM + dd + "-" + sum;
+            }
+        }
+        System.out.println(yyyy + MM + dd + "-" + shi + ":" + fen + ":00");
+        System.out.println(qihao);
         Map<String, String> createMap = new HashMap<String, String>();
         createMap.put("authuser", "*****");
         createMap.put("authpass", "*****");
@@ -71,6 +92,8 @@ public class Br_UserController {
         //List<Object> list = JSONArray.parseArray(result.toString()); //处理多个json
         System.out.println(result);
         JSONObject jsonObject = JSONObject.parseObject(result.toString().substring(1, result.toString().length() - 1));
+        //System.out.println(object.get("issue") + "--" + object.get("code") + "--" + yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00");
+        //System.out.println("GET返回信息：" + object);
         jcb_lottery_data j = new jcb_lottery_data();
         j.setType(117);
         j.setNumber(jsonObject.get("issue").toString());
@@ -79,6 +102,7 @@ public class Br_UserController {
         Data_Service.insertJcb_lottery_data(j);
         return "分分彩持续为您开奖中";
     }
+
     //测试
     public static void main(String[] args) throws Exception {
         //计算当前开奖
@@ -88,14 +112,35 @@ public class Br_UserController {
         String dd = new SimpleDateFormat("dd").format(calendar.getTime());
         String shi = new SimpleDateFormat("HH").format(calendar.getTime());
         String fen = new SimpleDateFormat("mm").format(calendar.getTime());
-        System.out.println(yyyy + MM + dd + "-" + shi + ":" + fen + ":00");
-        int sum = (Integer.parseInt(shi) * 60) + Integer.parseInt(fen);//当前期数
-        String qihao;
-        if ((sum + "").length() == 4) {
-            qihao = yyyy + MM + dd + "-" + sum;
+        int sum;
+        if (shi.equals("0") && fen.equals("0")) {
+            sum = 1440;//当前期数
         } else {
-            qihao = yyyy + MM + dd + "-0" + sum;
+            sum = (Integer.parseInt(shi) * 60) + Integer.parseInt(fen);//当前期数
         }
+        String qihao;
+        if ((sum + "").length() == 1) {
+            qihao = yyyy + MM + dd + "-000" + sum;
+        } else if ((sum + "").length() == 2) {
+            qihao = yyyy + MM + dd + "-00" + sum;
+        } else if ((sum + "").length() == 3) {
+            qihao = yyyy + MM + dd + "-0" + sum;
+        } else {
+            if (sum == 1440) {
+                /*日期最后一月1440可能出错*/
+                String tian = (calendar.get(Calendar.DATE) - 1) + "";
+                if (tian.length() == 1) {
+                    qihao = yyyy + MM + "0" + tian + "-" + sum;
+                } else {
+                    qihao = yyyy + MM + tian + "-" + sum;
+                }
+
+            } else {
+                qihao = yyyy + MM + dd + "-" + sum;
+            }
+        }
+        System.out.println(yyyy + MM + dd + "-" + shi + ":" + fen + ":00");
+        System.out.println(qihao);
         Map<String, String> createMap = new HashMap<String, String>();
         createMap.put("authuser", "*****");
         createMap.put("authpass", "*****");
