@@ -1,11 +1,8 @@
 package com.boran.Dao;
 
 import com.boran.Entity.jcb_lottery_data;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 /**
  * @Author LT
@@ -14,6 +11,7 @@ import java.util.List;
 
 //继承CrudRepository和JpaRepository都可
 @Repository
-public interface Data_Dao extends JpaRepository<jcb_lottery_data, String> {
-    //List<jcb_lottery_data> lists(String time);
+public interface Data_Dao<T> extends CrudRepository<jcb_lottery_data, String> {
+    //Object lists(String time);
+    //List<jcb_lottery_data> haoma();
 }

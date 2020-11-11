@@ -11,7 +11,7 @@ import javax.persistence.Id;
  * @create 2020-10-27 15:00
  */
 @Data
-/*@Entity(name = "jcb_data")*/
+
 @Entity
 public class jcb_lottery_data {
     @Id

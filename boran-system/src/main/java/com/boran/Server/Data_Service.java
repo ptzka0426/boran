@@ -29,6 +29,8 @@ public interface Data_Service {
      * 查询
      */
     List<jcb_lottery_data> getJcb_lottery_data();
-
-     Object lists(String  time);
+    //查询匹配的时间数据
+    Object lists(String  id);
+    //查询最新的号码
+    List<jcb_lottery_data> haoma();
 }

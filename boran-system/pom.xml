@@ -9,12 +9,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.boran</groupId>
+
     <artifactId>boran-system</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>boran-system</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
+        <guava-retry.version>2.0.0</guava-retry.version>
         <java.version>11</java.version>
     </properties>
 
@@ -56,7 +58,12 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.47</version>
         </dependency>
-
+        <!--Guava retryer 重试-->
+        <dependency>
+            <groupId>com.github.rholder</groupId>
+            <artifactId>guava-retrying</artifactId>
+            <version>${guava-retry.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
