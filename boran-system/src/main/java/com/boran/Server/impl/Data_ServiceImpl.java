@@ -98,4 +98,25 @@ public class Data_ServiceImpl implements Data_Service {
         transaction.commit();
         return dcnList;
     }
+
+    @Override
+    public int Selecthaoma(String time) {
+        Session session = (Session) entitySession.getDelegate();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery("SELECT COUNT(id) from  jcb_lottery_data where time=?0");
+        query.setParameter(0,time);
+        int i=Integer.parseInt(query.getSingleResult().toString());
+        transaction.commit();//用完提交事务
+        session.clear();//清除缓存
+        return i;
+    }
+
+    @Override
+    public void insert(jcb_lottery_data data) {
+        Session session = (Session) entitySession.getDelegate();
+        Transaction transaction = session.beginTransaction();
+        session.save(data);
+        transaction.commit();//用完提交事务
+        session.clear();//清除缓存
+    }
 }

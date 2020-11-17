@@ -84,8 +84,8 @@ public class Br_UserController {
 
     @GetMapping(value = "/test")
     public Object test() {
-        ThreadInsertHaoMa();
-        return "";
+        //ThreadInsertHaoMa();
+        return Data_Service.Selecthaoma("2020-11-15 02:17:00");
     }
 
     @GetMapping(value = "/txffc")
@@ -145,10 +145,11 @@ public class Br_UserController {
         j.setTime(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00");
         Data_Service.insertJcb_lottery_data(j);*/
         ThreadInsertHaoMa();
+
         return "分分彩持续为您开奖中";
     }
 
-    /*G*/
+    /*Guava 重试*/
     private Callable<Boolean> InsertReimAgentsCall = new Callable<Boolean>() {
         @Override
         public Boolean call() throws Exception {
@@ -186,24 +187,23 @@ public class Br_UserController {
                 }
             }
             //查询数据库的数据避免重复
-            jcb_lottery_data o = (jcb_lottery_data) Data_Service.haoma().get(0);
             //System.out.println(o.getTime());
-            /*判断为相同时间退出*/
-            System.out.println((yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00")+""+(o.getTime()));
-            if ((yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00").equals(o.getTime())) {
-                System.out.println(o.getTime()+"-退出！");
+            /*判断为相同时间退出 ---------------------------------------------------------------------------改成查询当前时间有误数据返回1或2*/
+            /*if ((yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00").equals(o.getTime())) {*/
+            if (Data_Service.Selecthaoma((yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00")) == 1) {
+                System.out.println(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00" + "-数据已存在，结束退出！");
                 return true;
             } else {
-                System.out.println(yyyy + MM + dd + "-" + shi + ":" + fen + ":00");
-                System.out.println(qihao);
+                //System.out.println(yyyy + MM + dd + "-" + shi + ":" + fen + ":00");
+                //System.out.println(qihao);
                 Map<String, String> createMap = new HashMap<String, String>();
                 createMap.put("authuser", "*****");
                 createMap.put("authpass", "*****");
                 createMap.put("orgkey", "****");
                 createMap.put("orgname", "****");
                 String result = new HttpClientService().doPost("https://www.manycai.tj/v1/api/lottery/issue/get/" + qihao + "/txffc.json", createMap, "utf-8");
-                System.out.println(result);
                 JSONObject jsonObject;
+                System.out.println(result);
                 try {
                     jsonObject = JSONObject.parseObject(result);
                 } catch (Exception e) {
@@ -216,6 +216,7 @@ public class Br_UserController {
                     zhuangtai = "true";//异常表示拿取到值
                 }
                 if (zhuangtai.equals("false")) {
+                    System.out.println(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00" + "-未开奖,退出！");
                     return false;
                 } else {
                     jcb_lottery_data j = new jcb_lottery_data();
@@ -223,16 +224,15 @@ public class Br_UserController {
                     j.setNumber(jsonObject.get("issue").toString());
                     j.setData(jsonObject.get("code").toString());
                     j.setTime(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00");
-                    System.out.println(jsonObject.get("code"));
                     Data_Service.insertJcb_lottery_data(j);
-                    System.out.println(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00-成功");
+                    System.out.println(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00" + ":00-成功");
                     return true;
                 }
             }
         }
     };
 
-    public void ThreadInsertHaoMa() {
+    public void ThreadInsertHaoMa() throws InterruptedException {
         Retryer<Boolean> retryer = RetryerBuilder
                 .<Boolean>newBuilder()
                 //抛出runtime异常、checked异常时都会重试，但是抛出error不会重试。
@@ -253,12 +253,15 @@ public class Br_UserController {
         } catch (RetryException e) {
             //System.out.println("2");
             //logger.error( "更新可代理报销人异常,需要发送提醒邮件" );
+        } finally {
+            Thread.sleep(0);
         }
     }
 
     @GetMapping(value = "/cha")
     public Object cha() {
-        return Data_Service.lists("66");
+        System.gc();//回收
+        return "GC回收";//Data_Service.lists("66");
     }
 }
 

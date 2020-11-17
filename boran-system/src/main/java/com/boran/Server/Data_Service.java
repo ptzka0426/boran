@@ -15,6 +15,7 @@ public interface Data_Service {
      */
     void insertJcb_lottery_data(jcb_lottery_data data);
 
+    void insert(jcb_lottery_data data) ;
     /**
      * 删除
      */
@@ -33,4 +34,5 @@ public interface Data_Service {
     Object lists(String  id);
     //查询最新的号码
     List<jcb_lottery_data> haoma();
+    int Selecthaoma(String time);
 }
