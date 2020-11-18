@@ -7,6 +7,7 @@ import com.boran.Entity.jcb_lottery_data;
 import com.boran.Server.Data_Service;
 import com.boran.Server.br_UserService;
 import com.boran.Util.HttpClientService;
+import com.boran.Util.HttpRequestUtil;
 import com.github.rholder.retry.*;
 import com.google.common.base.Predicates;
 import org.apache.http.NameValuePair;
@@ -20,7 +21,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -145,7 +145,6 @@ public class Br_UserController {
         j.setTime(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00");
         Data_Service.insertJcb_lottery_data(j);*/
         ThreadInsertHaoMa();
-
         return "分分彩持续为您开奖中";
     }
 
@@ -160,7 +159,7 @@ public class Br_UserController {
             String shi = new SimpleDateFormat("HH").format(calendar.getTime());
             String fen = new SimpleDateFormat("mm").format(calendar.getTime());
             int sum;
-            if (shi.equals("00") && fen.equals("00")) { //修改非部署
+            if (shi.equals("00") && fen.equals("00")) {
                 sum = 1440;//当前期数
             } else {
                 sum = (Integer.parseInt(shi) * 60) + Integer.parseInt(fen);//当前期数
@@ -186,22 +185,30 @@ public class Br_UserController {
                     qihao = yyyy + MM + dd + "-" + sum;
                 }
             }
+
             //查询数据库的数据避免重复
             //System.out.println(o.getTime());
             /*判断为相同时间退出 ---------------------------------------------------------------------------改成查询当前时间有误数据返回1或2*/
             /*if ((yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00").equals(o.getTime())) {*/
+            System.out.println((yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00")+"开始执行:"+qihao+"-----------------------------------------------------");
             if (Data_Service.Selecthaoma((yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00")) == 1) {
                 System.out.println(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00" + "-数据已存在，结束退出！");
                 return true;
             } else {
                 //System.out.println(yyyy + MM + dd + "-" + shi + ":" + fen + ":00");
                 //System.out.println(qihao);
-                Map<String, String> createMap = new HashMap<String, String>();
+                    /* Map<String, String> createMap = new HashMap<String, String>();
                 createMap.put("authuser", "*****");
                 createMap.put("authpass", "*****");
                 createMap.put("orgkey", "****");
                 createMap.put("orgname", "****");
-                String result = new HttpClientService().doPost("https://www.manycai.tj/v1/api/lottery/issue/get/" + qihao + "/txffc.json", createMap, "utf-8");
+                String result = "";
+                try {
+                    result = new HttpClientService().doPost("https://www.manycai.tj/v1/api/lottery/issue/get/" + qihao + "/txffc.json?c=dingshi&a=fBuNews", createMap, "utf-8");
+                } catch (Exception e) {
+                    System.out.println("httpclient异常");
+                    return false;
+                }
                 JSONObject jsonObject;
                 System.out.println(result);
                 try {
@@ -223,6 +230,31 @@ public class Br_UserController {
                     j.setType(117);
                     j.setNumber(jsonObject.get("issue").toString());
                     j.setData(jsonObject.get("code").toString());
+                    j.setTime(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00");
+                    Data_Service.insertJcb_lottery_data(j);
+                    System.out.println(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00" + ":00-成功");
+                    return true;
+                }*/
+                JSONObject result =null;
+                try {
+                    result =  HttpRequestUtil.httpRequest("https://www.manycai.tj/v1/api/lottery/issue/get/"+qihao+"/txffc.json?c=dingshi&a=fBuNews", "POST","null");
+                } catch (Exception e) {
+                    return  false;
+                }
+                String zhuangtai = "true";
+                try {
+                    zhuangtai = result.get("satus").toString();//成功返回false，表示过去失败
+                } catch (Exception e) {
+                    zhuangtai = "true";//异常表示拿取到值
+                }
+                if (zhuangtai.equals("false")) {
+                    System.out.println(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00" + "-未开奖,退出！");
+                    return false;
+                } else {
+                    jcb_lottery_data j = new jcb_lottery_data();
+                    j.setType(117);
+                    j.setNumber(result.get("issue").toString());
+                    j.setData(result.get("code").toString());
                     j.setTime(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00");
                     Data_Service.insertJcb_lottery_data(j);
                     System.out.println(yyyy + "-" + MM + "-" + dd + " " + shi + ":" + fen + ":00" + ":00-成功");
@@ -258,6 +290,25 @@ public class Br_UserController {
         }
     }
 
+    public static void main(String[] args) throws Exception {
+        JSONObject result =null;
+        try {
+            result =  HttpRequestUtil.httpRequest("https://www.manycai.tj/v1/api/lottery/issue/get/20201118-004/txffc.json?c=dingshi&a=fBuNews", "POST","null");
+        } catch (Exception e) {
+
+        }
+        String zhuangtai = "true";
+        try {
+            zhuangtai = result.get("satus").toString();//成功返回false，表示过去失败
+        } catch (Exception e) {
+            zhuangtai = "true";//异常表示拿取到值
+        }
+        if (zhuangtai.equals("false")) {
+            System.out.println("false");
+        } else {
+            System.out.println("true");
+        }
+    }
     @GetMapping(value = "/cha")
     public Object cha() {
         System.gc();//回收

@@ -34,6 +34,7 @@ public class HttpRequestUtil {
             httpUrlConn.setDoOutput(true);//允许输入流，即允许下载
             httpUrlConn.setDoInput(true);//允许输出流，即允许上传
             httpUrlConn.setUseCaches(false);//不使用缓冲
+            httpUrlConn.setConnectTimeout(500);//设置连接时长
             // 设置请求方式（GET/POST）
             httpUrlConn.setRequestMethod(requestMethod);
             if ("GET".equalsIgnoreCase(requestMethod)) {
@@ -62,7 +63,11 @@ public class HttpRequestUtil {
             inputStream.close();
             inputStream = null;
             httpUrlConn.disconnect();
-            jsonObject = JSONObject.parseObject(buffer.toString().substring(1, buffer.toString().length() - 1));
+            if(buffer.toString().substring(0,1).equals("{")){
+                jsonObject = JSONObject.parseObject(buffer.toString());
+            }else{
+                jsonObject = JSONObject.parseObject(buffer.toString().substring(1, buffer.toString().length() - 1));
+            }
         } catch (ConnectException ce) {
             ce.printStackTrace();
             System.out.println("Weixin server connection timed out");

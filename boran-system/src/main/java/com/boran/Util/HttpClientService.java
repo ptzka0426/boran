@@ -203,6 +203,7 @@ public class HttpClientService {
         }
         return null;
     }
+
     /*http的json*/
     public String doPost(String url, Map<String,String> map, String charset){
         HttpClient httpClient = null;
@@ -222,6 +223,7 @@ public class HttpClientService {
                 UrlEncodedFormEntity entity = new UrlEncodedFormEntity(list,charset);
                 httpPost.setEntity(entity);
             }
+
             HttpResponse response = httpClient.execute(httpPost);
             if(response != null){
                 HttpEntity resEntity = response.getEntity();
@@ -231,6 +233,8 @@ public class HttpClientService {
             }
         }catch(Exception ex){
             ex.printStackTrace();
+        }finally {
+            httpPost.reset();//关闭
         }
         return result;
     }
