@@ -237,7 +237,7 @@ public class Br_UserController {
                 }*/
                 JSONObject result =null;
                 try {
-                    result =  HttpRequestUtil.httpRequest("https://www.manycai.tj/v1/api/lottery/issue/get/"+qihao+"/txffc.json?c=dingshi&a=fBuNews", "POST","null");
+                    result =  HttpRequestUtil.httpRequest("https://www.manycai.tj/v1/api/lottery/issue/get/"+qihao+"/txffc.json?c=dingshi&a=fBuNews", "POST",null);
                 } catch (Exception e) {
                     return  false;
                 }
