@@ -2,10 +2,8 @@ package com.boran.Controller;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.boran.Entity.br_User;
 import com.boran.Entity.jcb_lottery_data;
 import com.boran.Server.Data_Service;
-import com.boran.Server.br_UserService;
 import com.boran.Util.HttpClientService;
 import com.boran.Util.HttpRequestUtil;
 import com.github.rholder.retry.*;
@@ -13,13 +11,10 @@ import com.google.common.base.Predicates;
 import org.apache.http.NameValuePair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -33,23 +28,11 @@ import java.util.concurrent.TimeUnit;
 @RestController
 public class Br_UserController {
 
-    @Autowired
-    private br_UserService br_userService;
+   /* @Autowired
+    private br_UserService br_userService;*/
+
     @Autowired
     private Data_Service Data_Service;
-
-    @RequestMapping(value = "/index")
-    public HashMap<String, Object> getUser(br_User user) {
-        HashMap<String, Object> map = new HashMap<>();
-        List<br_User> list = br_userService.getUser("超级管理员");
-        map.put("user:", list);
-        return map;
-    }
-
-    @PostMapping(value = "/login")
-    public int logIn(br_User user) {
-        return br_userService.log(user);
-    }
 
     @GetMapping(value = "/qqtxffc")
     public String qqtxffc() throws Exception {
@@ -272,9 +255,9 @@ public class Br_UserController {
                 //返回false也需要重试
                 .retryIfResult(Predicates.equalTo(false))
                 //重调策略
-                .withWaitStrategy(WaitStrategies.fixedWait(2, TimeUnit.SECONDS))
+                .withWaitStrategy(WaitStrategies.fixedWait(3, TimeUnit.SECONDS))
                 //尝试次数
-                .withStopStrategy(StopStrategies.stopAfterAttempt(10))
+                .withStopStrategy(StopStrategies.stopAfterAttempt(20))
                 .build();
 
         try {
